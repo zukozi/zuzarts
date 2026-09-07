@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Zuzarts</title>
+  <style>
+    :root {
+      --pastel-purple-1: #EBDCFD;
+      --pastel-purple-2: #D6B8FF;
+      --logo-box-bg: rgba(255,255,255,0.85);
+      --logo-box-border: rgba(0,0,0,0.08);
+      --nav-bg: rgba(255,255,255,0.92);
+      --nav-border: rgba(0,0,0,0.06);
+      --accent: #5a3d7a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;background:#fff;color:#111}
+
+    .header {background: linear-gradient(135deg,var(--pastel-purple-1),var(--pastel-purple-2));padding:clamp(20px,6vh,48px) 20px 12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+    .logo-box{background:var(--logo-box-bg);border:1px solid var(--logo-box-border);padding:12px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.08);display:inline-flex;align-items:center;justify-content:center}
+    .logo-box img{display:block;max-height:120px;width:auto;height:auto}
+    .main-nav{margin-top:8px;width:100%;display:flex;justify-content:center}
+    .main-nav ul{list-style:none;margin:0;padding:6px;display:flex;gap:12px;background:var(--nav-bg);border-radius:999px;border:1px solid var(--nav-border);box-shadow:0 6px 18px rgba(0,0,0,0.04);align-items:center}
+    .main-nav a{display:inline-block;padding:8px 14px;color:var(--accent);text-decoration:none;font-weight:600;border-radius:999px;transition:background .18s ease,color .18s ease,transform .12s ease}
+    .main-nav a:hover{background:rgba(255,255,255,0.6);transform:translateY(-2px)}
+    .main-nav a[aria-current="page"], .main-nav a.active{background:linear-gradient(90deg,rgba(255,255,255,0.65),rgba(255,255,255,0.85));box-shadow:0 4px 10px rgba(0,0,0,0.06)}
+
+    main{max-width:720px;margin:28px auto;padding:0 20px}
+    h1{color:var(--accent);margin-top:0}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:10px;border:1px solid rgba(0,0,0,0.08);border-radius:8px}
+    button{background:var(--accent);color:white;padding:10px 14px;border:none;border-radius:8px;font-weight:600}
+    @media (max-width:540px){.logo-box img{max-height:80px}.main-nav ul{gap:8px;padding:6px}.main-nav a{padding:8px 10px;font-size:14px}}
+  </style>
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="logo-box">
+      <img src="zuzarts.png" alt="Zuzarts logo">
+    </div>
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <ul>
+        <li><a href="/">About Zuz</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Contact</h1>
+    <p>If you'd like to get in touch, send a message using the form below or email zuz@example.com</p>
+    <form action="#" method="post" onsubmit="alert('This is a demo form. Replace action with your endpoint.');return false;">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+</body>
+</html>

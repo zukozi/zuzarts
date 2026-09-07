@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Zuzarts</title>
+  <title>About Zuz — Zuzarts</title>
   <style>
     :root {
       --pastel-purple-1: #EBDCFD;
       --pastel-purple-2: #D6B8FF;
       --logo-box-bg: rgba(255,255,255,0.85);
       --logo-box-border: rgba(0,0,0,0.08);
+      --nav-bg: rgba(255,255,255,0.92);
+      --nav-border: rgba(0,0,0,0.06);
+      --accent: #5a3d7a;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;background:#fff;color:#111}
 
     .header {
       background: linear-gradient(135deg,var(--pastel-purple-1),var(--pastel-purple-2));
-      padding: clamp(20px,6vh,48px) 20px;
+      padding: clamp(20px,6vh,48px) 20px 12px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -35,16 +38,50 @@
       justify-content:center;
     }
 
-    .logo-box img{
-      display:block;
-      max-height:120px;
-      width:auto;
-      height:auto;
+    .logo-box img{display:block;max-height:120px;width:auto;height:auto}
+
+    .main-nav{
+      margin-top:8px;
+      width:100%;
+      display:flex;
+      justify-content:center;
     }
 
-    @media (max-width:480px){
-      .logo-box{padding:8px;border-radius:10px}
+    .main-nav ul{
+      list-style:none;
+      margin:0;
+      padding:6px;
+      display:flex;
+      gap:12px;
+      background:var(--nav-bg);
+      border-radius:999px;
+      border:1px solid var(--nav-border);
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+      align-items:center;
+    }
+
+    .main-nav a{
+      display:inline-block;
+      padding:8px 14px;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      border-radius:999px;
+      transition:background .18s ease,color .18s ease,transform .12s ease;
+    }
+
+    .main-nav a:hover{background:rgba(255,255,255,0.6);transform:translateY(-2px)}
+    .main-nav a[aria-current="page"], .main-nav a.active{background:linear-gradient(90deg,rgba(255,255,255,0.65),rgba(255,255,255,0.85));box-shadow:0 4px 10px rgba(0,0,0,0.06)}
+
+    main{max-width:920px;margin:28px auto;padding:0 20px}
+    h1{color:var(--accent);margin-top:0}
+
+    .lead{color:#3b2a4a;line-height:1.6}
+
+    @media (max-width:540px){
       .logo-box img{max-height:80px}
+      .main-nav ul{gap:8px;padding:6px}
+      .main-nav a{padding:8px 10px;font-size:14px}
     }
   </style>
 </head>
@@ -53,9 +90,31 @@
     <div class="logo-box">
       <img src="zuzarts.png" alt="Zuzarts logo">
     </div>
+    <nav class="main-nav" role="navigation" aria-label="Main">
+      <ul>
+        <li><a href="/" class="active" aria-current="page">About Zuz</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
   <main>
-    <!-- Page content goes here -->
+    <h1>About Zuz</h1>
+    <p class="lead">Welcome to Zuzarts — a small creative space for art, inspiration, and the work of Zuz. This is the home page where you can learn about Zuz, browse the gallery, and find ways to get in touch.</p>
+
+    <section>
+      <h2>About</h2>
+      <p>Write a short bio or mission statement here. Example: Zuz is a multimedia artist exploring color, texture, and playful forms. Through digital illustrations and hand-painted prints, Zuz creates pieces that celebrate joy and curiosity.</p>
+    </section>
+
+    <section>
+      <h2>What you’ll find here</h2>
+      <ul>
+        <li>Original artwork and prints</li>
+        <li>Curated image gallery</li>
+        <li>Contact information and commissions</li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
